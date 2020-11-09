@@ -7,6 +7,13 @@ import { DataService, Message } from '../services/data.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+
+  items = [...new Array(100)].map((num, idx) => {
+    return {
+      text: 'Item: ' + idx,
+    };
+  });
+
   constructor(private data: DataService) {}
 
   refresh(ev) {
